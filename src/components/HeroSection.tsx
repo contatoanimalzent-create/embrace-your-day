@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import heroBg from "@/assets/hero-bg.jpg";
+import logo from "@/assets/capital-mix-logo.png";
 
 const HeroSection = () => {
   return (
@@ -20,9 +21,11 @@ const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
         >
-          <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-6">
-            <span className="text-gradient-gold">Capital Mix</span>
-          </h1>
+          <img
+            src={logo}
+            alt="Capital Mix"
+            className="h-20 md:h-28 lg:h-36 mx-auto mb-8 object-contain"
+          />
           <p className="text-lg md:text-xl text-secondary-foreground max-w-2xl mx-auto mb-4 leading-relaxed">
             O maior evento de cultura, gastronomia e negócios da capital.
           </p>
