@@ -58,7 +58,7 @@ const initialForm: FormData = {
   razao_social: "", nome_fantasia: "", cnpj: "", responsible_name: "", phone_pj: "", email_pj: "",
   cep: "", address: "", number: "", complement: "", neighborhood: "", city: "", state: "",
   segment: "", brand_description: "", products: "", price_range: "", instagram: "", website: "",
-  needs_energy: "", sells_food: "", needs_larger_space: "", needs_larger_space: "", stand_people: "", special_needs: "",
+  needs_energy: "", sells_food: "", needs_larger_space: "", stand_people: "", special_needs: "",
   logo: null, product_photos: null, document_file: null, address_proof: null,
   terms_truth: false, terms_event: false, terms_contact: false,
 };
