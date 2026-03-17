@@ -43,18 +43,21 @@ const ContactSection = () => {
       label: "Local",
       value: "Esplanada dos Ministérios",
       sub: "Ao lado do Museu Nacional da República · Brasília, DF",
+      href: undefined,
     },
     {
       icon: <Mail className="w-4 h-4 text-[#C9A84C]" />,
       label: "E-mail",
       value: "institutonacionalids@gmail.com",
       sub: "Respondemos em até 24h",
+      href: "mailto:institutonacionalids@gmail.com",
     },
     {
       icon: <Phone className="w-4 h-4 text-[#C9A84C]" />,
       label: "WhatsApp / Telefone",
       value: "+55 (61) 99307-3003",
       sub: "Seg a Sex · 9h às 18h",
+      href: "https://wa.me/5561993073003",
     },
   ];
 
@@ -106,21 +109,26 @@ const ContactSection = () => {
             transition={{ duration: 0.6 }}
             className="lg:col-span-2 flex flex-col gap-4"
           >
-            {infos.map((info, i) => (
-              <div
-                key={i}
-                className="bg-white/[0.03] border border-white/[0.06] rounded-2xl p-5 flex items-start gap-4 hover:border-[#C9A84C]/20 hover:bg-white/[0.05] transition-all duration-300"
-              >
-                <div className="w-9 h-9 rounded-xl bg-[#C9A84C]/10 border border-[#C9A84C]/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-                  {info.icon}
-                </div>
-                <div>
-                  <p className="text-[10px] uppercase tracking-widest text-white/30 font-semibold mb-1">{info.label}</p>
-                  <p className="text-sm font-semibold text-white/80">{info.value}</p>
-                  <p className="text-xs text-white/35 mt-0.5 leading-relaxed">{info.sub}</p>
-                </div>
-              </div>
-            ))}
+            {infos.map((info, i) => {
+              const inner = (
+                <>
+                  <div className="w-9 h-9 rounded-xl bg-[#C9A84C]/10 border border-[#C9A84C]/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    {info.icon}
+                  </div>
+                  <div>
+                    <p className="text-[10px] uppercase tracking-widest text-white/30 font-semibold mb-1">{info.label}</p>
+                    <p className="text-sm font-semibold text-white/80">{info.value}</p>
+                    <p className="text-xs text-white/35 mt-0.5 leading-relaxed">{info.sub}</p>
+                  </div>
+                </>
+              );
+              const cls = "bg-white/[0.03] border border-white/[0.06] rounded-2xl p-5 flex items-start gap-4 hover:border-[#C9A84C]/20 hover:bg-white/[0.05] transition-all duration-300";
+              return info.href ? (
+                <a key={i} href={info.href} target="_blank" rel="noopener noreferrer" className={cls}>{inner}</a>
+              ) : (
+                <div key={i} className={cls}>{inner}</div>
+              );
+            })}
 
             {/* Decorative map placeholder */}
             <div className="flex-1 min-h-[120px] bg-white/[0.02] border border-white/[0.05] rounded-2xl overflow-hidden relative flex items-center justify-center">
