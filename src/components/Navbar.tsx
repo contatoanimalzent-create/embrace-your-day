@@ -10,6 +10,17 @@ const navLinks = [
   { label: "Contato", href: "#contato" },
 ];
 
+const scrollTo = (href: string, closeMenu?: () => void) => {
+  const id = href.replace("#", "");
+  const el = document.getElementById(id);
+  if (el) {
+    const offset = 80;
+    const top = el.getBoundingClientRect().top + window.scrollY - offset;
+    window.scrollTo({ top, behavior: "smooth" });
+  }
+  closeMenu?.();
+};
+
 const Navbar = () => {
   const [open, setOpen] = useState(false);
 
@@ -17,75 +28,45 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 border-b border-white/10 bg-black/60 backdrop-blur-xl">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 md:h-20 md:px-8">
 
-        {/* Logo */}
-        <a href="#hero" className="relative z-10 flex items-center">
-          <img
-            src={logo}
-            alt="Capital Mix"
-            className="h-10 md:h-12 object-contain drop-shadow-[0_8px_20px_rgba(0,0,0,0.6)]"
-          />
-        </a>
+        <button onClick={() => scrollTo("#hero")} className="relative z-10 flex items-center">
+          <img src={logo} alt="Capital Mix" className="h-10 md:h-12 object-contain drop-shadow-[0_8px_20px_rgba(0,0,0,0.6)]" />
+        </button>
 
-        {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-10">
           {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="text-[11px] uppercase tracking-[0.25em] text-white/60 hover:text-white transition-all duration-300 font-medium"
-            >
+            <button key={link.href} onClick={() => scrollTo(link.href)}
+              className="text-[11px] uppercase tracking-[0.25em] text-white/60 hover:text-white transition-all duration-300 font-medium">
               {link.label}
-            </a>
+            </button>
           ))}
         </div>
 
-        {/* CTA Desktop */}
         <div className="hidden md:flex items-center gap-4">
-          <a
-            href="#expositor"
-            className="rounded-full border border-white/20 px-5 py-2 text-[11px] uppercase tracking-[0.25em] text-white/80 hover:bg-white hover:text-black transition-all duration-300"
-          >
+          <button onClick={() => scrollTo("#expositor")}
+            className="rounded-full border border-white/20 px-5 py-2 text-[11px] uppercase tracking-[0.25em] text-white/80 hover:bg-white hover:text-black transition-all duration-300">
             Quero Expor
-          </a>
+          </button>
         </div>
 
-        {/* Mobile Button */}
-        <button
-          onClick={() => setOpen(!open)}
-          className="md:hidden text-white relative z-10"
-        >
+        <button onClick={() => setOpen(!open)} className="md:hidden text-white relative z-10">
           {open ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
-      {/* Mobile Menu */}
       <AnimatePresence>
         {open && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "100vh" }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-black/95 backdrop-blur-xl"
-          >
+          <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: "100vh" }} exit={{ opacity: 0, height: 0 }} className="md:hidden bg-black/95 backdrop-blur-xl">
             <div className="flex flex-col items-center justify-center h-full gap-8">
               {navLinks.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setOpen(false)}
-                  className="text-sm uppercase tracking-[0.3em] text-white/70 hover:text-white transition-all"
-                >
+                <button key={link.href} onClick={() => scrollTo(link.href, () => setOpen(false))}
+                  className="text-sm uppercase tracking-[0.3em] text-white/70 hover:text-white transition-all">
                   {link.label}
-                </a>
+                </button>
               ))}
-
-              <a
-                href="#expositor"
-                onClick={() => setOpen(false)}
-                className="mt-4 rounded-full border border-white/30 px-6 py-3 text-sm uppercase tracking-[0.3em] text-white hover:bg-white hover:text-black transition-all"
-              >
+              <button onClick={() => scrollTo("#expositor", () => setOpen(false))}
+                className="mt-4 rounded-full border border-white/30 px-6 py-3 text-sm uppercase tracking-[0.3em] text-white hover:bg-white hover:text-black transition-all">
                 Quero Expor
-              </a>
+              </button>
             </div>
           </motion.div>
         )}

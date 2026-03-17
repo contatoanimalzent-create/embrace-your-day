@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
@@ -7,6 +8,13 @@ import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 
 const Index = () => {
+  useEffect(() => {
+    document.documentElement.style.scrollBehavior = "smooth";
+    return () => {
+      document.documentElement.style.scrollBehavior = "";
+    };
+  }, []);
+
   return (
     <div className="min-h-screen">
       <Navbar />
