@@ -7,6 +7,7 @@ const navLinks = [
   { label: "Início", href: "#hero" },
   { label: "O Evento", href: "#about" },
   { label: "Benefícios", href: "#benefits" },
+  { label: "Contato", href: "#contato" },
 ];
 
 const Navbar = () => {
@@ -15,7 +16,7 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 border-b border-white/10 bg-black/60 backdrop-blur-xl">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 md:h-20 md:px-8">
-        
+
         {/* Logo */}
         <a href="#hero" className="relative z-10 flex items-center">
           <img
@@ -41,7 +42,7 @@ const Navbar = () => {
         {/* CTA Desktop */}
         <div className="hidden md:flex items-center gap-4">
           <a
-            href="#exhibitor"
+            href="#expositor"
             className="rounded-full border border-white/20 px-5 py-2 text-[11px] uppercase tracking-[0.25em] text-white/80 hover:bg-white hover:text-black transition-all duration-300"
           >
             Quero Expor
@@ -79,7 +80,7 @@ const Navbar = () => {
               ))}
 
               <a
-                href="#exhibitor"
+                href="#expositor"
                 onClick={() => setOpen(false)}
                 className="mt-4 rounded-full border border-white/30 px-6 py-3 text-sm uppercase tracking-[0.3em] text-white hover:bg-white hover:text-black transition-all"
               >
