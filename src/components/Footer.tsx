@@ -22,7 +22,7 @@ const Footer = () => {
               <img
                 src={logoTurismo}
                 alt="Secretaria de Turismo - GDF"
-                className="h-28 md:h-36 w-auto object-contain"
+                className="h-36 md:h-44 w-auto object-contain"
                 style={{ filter: "brightness(1.15) contrast(1.05)" }}
               />
             </div>
@@ -49,7 +49,7 @@ const Footer = () => {
               <img
                 src={logoIDS}
                 alt="Instituto IDS"
-                className="h-28 md:h-36 w-auto object-contain group-hover:scale-105 transition-transform duration-300"
+                className="h-14 md:h-16 w-auto object-contain group-hover:scale-105 transition-transform duration-300"
                 style={{ filter: "brightness(1.05)" }}
               />
             </a>
