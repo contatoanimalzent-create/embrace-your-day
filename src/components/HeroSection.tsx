@@ -79,16 +79,11 @@ const HeroSection = () => {
             transition={{ duration: 0.85, delay: 0.18 }}
             className="flex items-center justify-center lg:justify-end"
           >
-            <div className="relative w-full max-w-[520px]">
-              <div className="absolute inset-0 rounded-[2rem] bg-primary/15 blur-3xl" />
-              <div className="relative rounded-[2rem] border border-white/10 bg-black/35 p-6 shadow-[0_30px_80px_rgba(0,0,0,0.45)] backdrop-blur-md md:p-8">
-                <img
-                  src={logo}
-                  alt="Capital Mix"
-                  className="w-full object-contain drop-shadow-[0_18px_36px_rgba(0,0,0,0.55)]"
-                />
-              </div>
-            </div>
+            <img
+              src={logo}
+              alt="Capital Mix"
+              className="w-full max-w-[560px] object-contain drop-shadow-[0_0_60px_rgba(0,0,0,0.8)]"
+            />
           </motion.div>
         </div>
       </div>
