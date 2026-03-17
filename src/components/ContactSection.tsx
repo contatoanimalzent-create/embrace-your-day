@@ -41,7 +41,7 @@ const ContactSection = () => {
   const infos = [
     {
       icon: <MapPin className="w-4 h-4 text-[#C9A84C]" />,
-      label: "Local",
+      label: "Local — Ver no Mapa",
       value: "Estacionamento 12 — Parque da Cidade",
       sub: "Ao lado do Parque Ana Lídia · Brasília, DF",
       href: "https://share.google/Y5f1iHLEEJbiIeeqr",
@@ -95,11 +95,23 @@ const ContactSection = () => {
               const cls = "bg-white/[0.03] border border-white/[0.06] rounded-2xl p-5 flex items-start gap-4 hover:border-[#C9A84C]/20 hover:bg-white/[0.05] transition-all duration-300";
               return info.href ? <a key={i} href={info.href} target="_blank" rel="noopener noreferrer" className={cls}>{inner}</a> : <div key={i} className={cls}>{inner}</div>;
             })}
-            <div className="flex-1 min-h-[120px] bg-white/[0.02] border border-white/[0.05] rounded-2xl overflow-hidden relative flex items-center justify-center">
+            <div className="bg-white/[0.02] border border-white/[0.05] rounded-2xl overflow-hidden relative p-5">
               <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_70%_at_50%_50%,rgba(201,168,76,0.05),transparent)]" />
-              <div className="text-center relative z-10 px-4">
+              <div className="relative z-10 text-center mb-4">
                 <MapPin className="w-6 h-6 text-[#C9A84C]/50 mx-auto mb-2" />
                 <p className="text-xs text-white/25 leading-relaxed">Brasília · DF<br />Estacionamento 12 — Parque da Cidade</p>
+              </div>
+              <div className="relative z-10 flex gap-3">
+                <a href="https://share.google/Y5f1iHLEEJbiIeeqr" target="_blank" rel="noopener noreferrer"
+                  className="flex-1 flex items-center justify-center gap-2 bg-white/[0.05] border border-white/10 rounded-xl py-2.5 text-xs text-white/50 hover:border-[#C9A84C]/40 hover:text-white/80 hover:bg-white/[0.08] transition-all duration-200">
+                  <MapPin className="w-3.5 h-3.5 text-[#C9A84C]" />
+                  Google Maps
+                </a>
+                <a href="https://waze.com/ul?ll=-15.7942287,-47.9303303&navigate=yes" target="_blank" rel="noopener noreferrer"
+                  className="flex-1 flex items-center justify-center gap-2 bg-white/[0.05] border border-white/10 rounded-xl py-2.5 text-xs text-white/50 hover:border-[#C9A84C]/40 hover:text-white/80 hover:bg-white/[0.08] transition-all duration-200">
+                  <svg className="w-3.5 h-3.5 text-[#C9A84C]" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2zm-1 5a1 1 0 100 2 1 1 0 000-2zm4 0a1 1 0 100 2 1 1 0 000-2zm-2 3c-2.485 0-4.5 1.567-4.5 3.5 0 1.16.7 2.188 1.781 2.844C10.093 17.53 10 18.257 10 19h4c0-.743-.093-1.47-.281-2.156C14.8 16.188 15.5 15.16 15.5 14c0-1.933-2.015-3.5-4.5-3.5z"/></svg>
+                  Waze
+                </a>
               </div>
             </div>
           </motion.div>
