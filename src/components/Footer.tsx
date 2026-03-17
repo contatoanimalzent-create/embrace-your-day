@@ -18,11 +18,11 @@ const Footer = () => {
             <span className="text-[10px] uppercase tracking-[0.4em] text-white/30 font-semibold">
               Fomento
             </span>
-            <div className="w-64 h-36 bg-white/[0.06] border border-white/10 rounded-2xl px-8 py-6 flex items-center justify-center hover:border-white/20 hover:bg-white/[0.09] transition-all duration-300">
+            <div className="w-64 h-36 bg-white/[0.06] border border-white/10 rounded-2xl p-2 flex items-center justify-center hover:border-white/20 hover:bg-white/[0.09] transition-all duration-300">
               <img
                 src={logoTurismo}
                 alt="Secretaria de Turismo - GDF"
-                className="w-full h-full object-contain"
+                className="w-full h-full object-contain scale-125"
                 style={{ filter: "brightness(1.15) contrast(1.05)" }}
               />
             </div>
