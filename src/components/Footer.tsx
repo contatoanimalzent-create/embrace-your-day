@@ -18,11 +18,11 @@ const Footer = () => {
             <span className="text-[10px] uppercase tracking-[0.4em] text-white/30 font-semibold">
               Fomento
             </span>
-            <div className="bg-white/[0.06] border border-white/10 rounded-2xl px-10 py-6 hover:border-white/20 hover:bg-white/[0.09] transition-all duration-300">
+            <div className="w-64 h-36 bg-white/[0.06] border border-white/10 rounded-2xl px-8 py-6 flex items-center justify-center hover:border-white/20 hover:bg-white/[0.09] transition-all duration-300">
               <img
                 src={logoTurismo}
                 alt="Secretaria de Turismo - GDF"
-                className="h-36 md:h-44 w-auto object-contain"
+                className="w-full h-full object-contain"
                 style={{ filter: "brightness(1.15) contrast(1.05)" }}
               />
             </div>
@@ -44,12 +44,12 @@ const Footer = () => {
               href="https://www.idsoficial.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="group bg-white/[0.06] border border-white/10 rounded-2xl px-10 py-6 hover:border-[#C9A84C]/30 hover:bg-white/[0.09] hover:shadow-[0_0_24px_rgba(201,168,76,0.08)] transition-all duration-300 block"
+              className="group w-64 h-36 bg-white/[0.06] border border-white/10 rounded-2xl px-8 py-6 flex items-center justify-center hover:border-[#C9A84C]/30 hover:bg-white/[0.09] hover:shadow-[0_0_24px_rgba(201,168,76,0.08)] transition-all duration-300 block"
             >
               <img
                 src={logoIDS}
                 alt="Instituto IDS"
-                className="h-14 md:h-16 w-auto object-contain group-hover:scale-105 transition-transform duration-300"
+                className="w-2/3 h-2/3 object-contain group-hover:scale-105 transition-transform duration-300"
                 style={{ filter: "brightness(1.05)" }}
               />
             </a>
