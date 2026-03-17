@@ -3,18 +3,21 @@ import { Button } from "@/components/ui/button";
 import heroBg from "@/assets/hero-bg.jpg";
 import logo from "@/assets/capital-mix-logo.png";
 
+const scrollTo = (id: string) => {
+  const el = document.getElementById(id);
+  if (el) {
+    const top = el.getBoundingClientRect().top + window.scrollY - 80;
+    window.scrollTo({ top, behavior: "smooth" });
+  }
+};
+
 const HeroSection = () => {
   return (
     <section id="hero" className="relative min-h-screen overflow-hidden bg-black">
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${heroBg})` }}
-      />
-
+      <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${heroBg})` }} />
       <div className="absolute inset-0 bg-black/65" />
       <div className="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-black/25" />
       <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/30" />
-
       <div className="absolute -left-24 top-24 h-72 w-72 rounded-full bg-primary/20 blur-3xl" />
       <div className="absolute bottom-10 right-0 h-80 w-80 rounded-full bg-primary/10 blur-3xl" />
 
@@ -27,7 +30,7 @@ const HeroSection = () => {
               transition={{ duration: 0.6 }}
               className="mb-5 text-[11px] font-medium uppercase tracking-[0.34em] text-white/65 md:text-xs"
             >
-              Esplanada dos Ministérios • Brasília/DF
+              Estacionamento 12 • Parque da Cidade • Brasília/DF
             </motion.p>
 
             <motion.h1
@@ -58,17 +61,12 @@ const HeroSection = () => {
               transition={{ duration: 0.75, delay: 0.24 }}
               className="mt-10 flex flex-col gap-4 sm:flex-row"
             >
-              <Button variant="hero" size="lg" asChild className="min-w-[220px]">
-                <a href="#about">Conhecer o Evento</a>
+              <Button variant="hero" size="lg" className="min-w-[220px]" onClick={() => scrollTo("about")}>
+                Conhecer o Evento
               </Button>
 
-              <Button
-                variant="hero-outline"
-                size="lg"
-                asChild
-                className="min-w-[220px]"
-              >
-                <a href="#exhibitor">Quero Expor</a>
+              <Button variant="hero-outline" size="lg" className="min-w-[220px]" onClick={() => scrollTo("expositor")}>
+                Quero Expor
               </Button>
             </motion.div>
           </div>

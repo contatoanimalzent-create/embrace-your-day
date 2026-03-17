@@ -39,9 +39,27 @@ const ContactSection = () => {
   };
 
   const infos = [
-    { icon: <MapPin className="w-4 h-4 text-[#C9A84C]" />, label: "Local", value: "Esplanada dos Ministérios", sub: "Ao lado do Museu Nacional da República · Brasília, DF", href: undefined },
-    { icon: <Mail className="w-4 h-4 text-[#C9A84C]" />, label: "E-mail", value: "institutonacionalids@gmail.com", sub: "Respondemos em até 24h", href: "mailto:institutonacionalids@gmail.com" },
-    { icon: <Phone className="w-4 h-4 text-[#C9A84C]" />, label: "WhatsApp / Telefone", value: "+55 (61) 99307-3003", sub: "Seg a Sex · 9h às 18h", href: "https://wa.me/5561993073003" },
+    {
+      icon: <MapPin className="w-4 h-4 text-[#C9A84C]" />,
+      label: "Local",
+      value: "Estacionamento 12 — Parque da Cidade",
+      sub: "Ao lado do Parque Ana Lídia · Brasília, DF",
+      href: "https://share.google/Y5f1iHLEEJbiIeeqr",
+    },
+    {
+      icon: <Mail className="w-4 h-4 text-[#C9A84C]" />,
+      label: "E-mail",
+      value: "institutonacionalids@gmail.com",
+      sub: "Respondemos em até 24h",
+      href: "mailto:institutonacionalids@gmail.com",
+    },
+    {
+      icon: <Phone className="w-4 h-4 text-[#C9A84C]" />,
+      label: "WhatsApp / Telefone",
+      value: "+55 (61) 99307-3003",
+      sub: "Seg a Sex · 9h às 18h",
+      href: "https://wa.me/5561993073003",
+    },
   ];
 
   const subjects = [
@@ -79,7 +97,10 @@ const ContactSection = () => {
             })}
             <div className="flex-1 min-h-[120px] bg-white/[0.02] border border-white/[0.05] rounded-2xl overflow-hidden relative flex items-center justify-center">
               <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_70%_at_50%_50%,rgba(201,168,76,0.05),transparent)]" />
-              <div className="text-center relative z-10 px-4"><MapPin className="w-6 h-6 text-[#C9A84C]/50 mx-auto mb-2" /><p className="text-xs text-white/25 leading-relaxed">Brasília · DF<br />Esplanada dos Ministérios</p></div>
+              <div className="text-center relative z-10 px-4">
+                <MapPin className="w-6 h-6 text-[#C9A84C]/50 mx-auto mb-2" />
+                <p className="text-xs text-white/25 leading-relaxed">Brasília · DF<br />Estacionamento 12 — Parque da Cidade</p>
+              </div>
             </div>
           </motion.div>
           <motion.div initial={{ opacity: 0, x: 24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }} className="lg:col-span-3">
